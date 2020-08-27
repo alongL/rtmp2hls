@@ -27,7 +27,8 @@ ffmpeg can pull the rtmp source and generate hls by this command.
 more info about this command. visit https://ffmpeg.org/ffmpeg-formats.html
 
 ```
-ffmpeg  -f flv -i rtmp://yunyun.com/live/my -vcodec copy -acodec copy -f hls -hls_flags delete_segments -segment_list_size 10 -hls_list_size 5 live/playlist.m3u8
+ffmpeg  -f flv -i rtmp://yunyun.com/live/my -vcodec copy -acodec copy \
+-f hls -hls_flags delete_segments -segment_list_size 10 -hls_list_size 5 live/playlist.m3u8
 ```
 
 
