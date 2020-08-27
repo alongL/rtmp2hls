@@ -1,9 +1,9 @@
 XX = g++
 
 CXXFLAGS =  -c  -g -std=c++11
-CLIBS = -L../../lib/linux  -lnetsys -lcommon -lpthread 
+CLIBS =  -lpthread 
 #-luuid -ldl -lssl -lcrypto
-INCLUDE_DIRS = -I../../include  
+INCLUDE_DIRS = -I./  
 
 SRC=$(wildcard *.cpp)
 OBJECTS:=$(patsubst %.cpp,%.o,$(SRC))
