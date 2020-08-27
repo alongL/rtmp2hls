@@ -6,11 +6,11 @@ now only run in linux.
 
 
 # how to use?
-##1. get ffmpeg for your platform
+## 1. get ffmpeg for your platform ##
 you can compile ffmpeg by yourself. refer https://github.com/markus-perl/ffmpeg-build-script  
 place ffmpeg in bin dir.
 
-## 2.compile rtmp2hls
+## 2.compile rtmp2hls ##
 >cd src
 >make 
 rtmp2hls will be generated in project dir.
