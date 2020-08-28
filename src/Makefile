@@ -9,8 +9,8 @@ SRC=$(wildcard *.cpp)
 OBJECTS:=$(patsubst %.cpp,%.o,$(SRC))
 
 PROGRAM:= rtmp2hls
-BINDIR := ./
-TARGET = ./$(PROGRAM)
+BINDIR := ../
+TARGET = ../$(PROGRAM)
 
 
 

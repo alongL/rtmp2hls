@@ -55,10 +55,6 @@ void IngestTask::init(std::string src, std::string dest)
 {
 	this->src = src;
 	this->dest = dest;
-	std::string rtmp_port = ProxytaskMgr::getinstance().get_rtmp_port();
-	std::string hls_port = ProxytaskMgr::getinstance().get_hls_port();
-	this->rtmp = "rtmp://127.0.0.1:" + rtmp_port + dest;					        //rtmp://localhost/live/my
-	this->hls = "http://127.0.0.1:" + hls_port + dest + std::string("/hls.m3u8");   //http://localhost/live/my/hls.m3u8
 
 	std::string  m3u8_dir = "./html" + dest;
 	std::string  m3u8 = m3u8_dir + std::string("/hls.m3u8");
@@ -71,7 +67,7 @@ void IngestTask::init(std::string src, std::string dest)
 
 	ffmpeg = new SrsFFMPEG(ffmpeg_path);
 	auto name = replaceAll(dest, "/", "_");
-	string log_file = "./logs/ffmpeg" + name;// 日志文件./logs/ffmpeg_live_my
+	string log_file = "./logs/ffmpeg" + name + ".log";// 日志文件./logs/ffmpeg_live_my.log
 	
 	ffmpeg->initialize(src, m3u8, log_file);
 }
@@ -84,8 +80,6 @@ void IngestTask::init(std::string src, std::string dest)
 
 int ProxytaskMgr::init()
 {
-
-
 	return 0;
 }
 
@@ -100,11 +94,6 @@ int ProxytaskMgr::start(std::string src, std::string dest)
 }
 
 
-//第一次强制加载配置文件
-void ProxytaskMgr::loadConfig(bool force)
-{
-	
-}
 
 
 int ProxytaskMgr::check(int timecnt)
@@ -130,11 +119,6 @@ int ProxytaskMgr::check(int timecnt)
 		if ((err = task->start()) != srs_success) {
 			printf("ingester start. err:%d\n", err);
 		}
-	}
-
-	if (timecnt % 10 == 0)//every 10 seconds
-	{
-		loadConfig(); //读取加载配置文件
 	}
 
 	return 0;

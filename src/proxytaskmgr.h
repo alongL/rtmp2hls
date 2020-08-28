@@ -62,10 +62,6 @@ public:
 	}
 
 	int load_from_db();
-	//int save_task_to_db(IngestTask *ptask);
-	//int del_task_from_db(const std::string dest);
-	std::string get_hls_port() { return m_hls_port; }
-	std::string get_rtmp_port() { return m_rtmp_port; }
 
 
 	int add_task(std::string src, std::string dest)
@@ -153,7 +149,7 @@ public:
 	
 
 	//停止某个url
-	int stop(std::string dest)
+	int fast(std::string dest)
 	{
 		auto iter = m_taskMap.find(dest);
 		if (iter != m_taskMap.end())
@@ -163,22 +159,18 @@ public:
 		ptask->stop();
 	}
 
-	int stopAll(std::string src)
+	int fast_kill()
 	{
 		for (auto &item : m_taskMap)
 		{
 			auto ptask = item.second;
-			ptask->stop();
-			//删除此task;
+			if(ptask)
+				ptask->fast_kill();
 		}
 	}
 
 
-	void loadConfig(bool force=false);
 
-	//1 秒check 一次
 	int check(int timecnt);
-	
-
 
 };
