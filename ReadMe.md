@@ -16,6 +16,8 @@ cd src
 make 
 ```
 rtmp2hls will be generated in project dir.
+It's the same for centos and ubuntu linux.
+you can develop with vs2015 use vs/rtmp2hls.sln, but this program can not run sucess in windows. 
 
 ## 3.run 
 ./rtmp2hls
@@ -31,6 +33,8 @@ hls adress is: http://localhost:8086/live/my/hls.m3u8
 ffmpeg can pull the rtmp source and generate hls by this command.
 more info about this command. visit https://ffmpeg.org/ffmpeg-formats.html
 
+I have compiled  ffmpeg and placed it in bin dir.
+It can be used in centos 7.6 and ubuntu 18.04
 ```
 ffmpeg  -f flv -i rtmp://yunyun.com/live/my -vcodec copy -acodec copy \
 -f hls -hls_flags delete_segments -segment_list_size 5 -hls_list_size 10 live/playlist.m3u8
