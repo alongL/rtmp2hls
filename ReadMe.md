@@ -25,9 +25,10 @@ If ffmpeg process is killed by other process, it will be restarted in 3 seconds.
 If rtmp2hls is stoped by pkill, it will also stop ffmpeg process.
 
 ## 4.config
-you can modify tasks.csv to add rtmp to hls tasks .
+you can modify tasks.csv to add rtmp to hls tasks.
+for example: pull rtmp://abc.com/live/my to generate /live/my/hls.m3u8 .the csv is like this:
 src is : rtmp://abc.com/live/my
-dest is : live/my   
+dest is : /live/my
 hls adress is: http://localhost:8086/live/my/hls.m3u8
 
 
