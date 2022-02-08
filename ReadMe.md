@@ -21,23 +21,24 @@ you can develop with vs2015 use vs/rtmp2hls.sln, but this program can not run su
 
 ## 3.run 
 ./rtmp2hls
-If ffmpeg process is killed by other process, it will be restarted in 3 seconds.
-If rtmp2hls is stoped by pkill, it will also stop ffmpeg process.
+If ffmpeg process is killed by other process, it will be restarted in 3 seconds.  
+If rtmp2hls is stoped by pkill, it will also stop ffmpeg process.  
 
 ## 4.config
-you can modify tasks.csv to add rtmp to hls tasks.
-for example: pull rtmp://abc.com/live/my to generate /live/my/hls.m3u8 .the csv is like this:
-src is : rtmp://abc.com/live/my
-dest is : /live/my
+you can modify tasks.csv to add rtmp to hls tasks.  
+for example: pull rtmp://abc.com/live/my to generate /live/my/hls.m3u8 .the csv is like this:  
+src is : rtmp://abc.com/live/my  
+dest is : /live/my  
 hls adress is: http://localhost:8086/live/my/hls.m3u8
 
 
 # Tips
-ffmpeg can pull the rtmp source and generate hls by this command.
+ffmpeg can pull the rtmp source and generate hls by this command.  
 more info about this command. visit https://ffmpeg.org/ffmpeg-formats.html
 
-I have compiled  ffmpeg and placed it in bin dir.
-It can be used in centos 7.6 and ubuntu 18.04
+I have compiled  ffmpeg and placed it in bin dir.  
+It can be used in centos 7.6 and ubuntu 18.04  
+The cmd used is like this:   
 ```
 ffmpeg  -f flv -i rtmp://yunyun.com/live/my -vcodec copy -acodec copy \
 -f hls -hls_flags delete_segments -segment_list_size 5 -hls_list_size 10 live/playlist.m3u8
