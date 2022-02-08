@@ -49,10 +49,10 @@ ffmpeg  -f flv -i rtmp://yunyun.com/live/my -vcodec copy -acodec copy \
 
 
 # Reference
-This project used some code from these repositories
- 1.httplib
-https://github.com/yhirose/cpp-httplib
- 2.srs
-https://github.com/ossrs/srs/
- 3.csv
- https://github.com/vincentlaucsb/csv-parser
+This project used some code from these repositories  
+ 1.httplib  
+https://github.com/yhirose/cpp-httplib  
+ 2.srs  
+https://github.com/ossrs/srs/  
+ 3.csv  
+ https://github.com/vincentlaucsb/csv-parser  
