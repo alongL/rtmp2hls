@@ -15,9 +15,9 @@ place ffmpeg in bin dir.
 cd src
 make 
 ```
-rtmp2hls will be generated in project dir.
-It's the same for centos and ubuntu linux.
-you can develop with vs2015 use vs/rtmp2hls.sln, but this program can not run sucess in windows. 
+rtmp2hls will be generated in project dir.  
+It's the same for centos and ubuntu linux.  
+you can develop with vs2015 use vs/rtmp2hls.sln, but this program can not run sucess in windows.   
 
 ## 3.run 
 ./rtmp2hls
